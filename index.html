@@ -41,15 +41,15 @@
             text-transform: uppercase;
         }
         .hero {
-           position: relative;
-    height: 120vh;
-    background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_index_1.jpg?raw=true') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    text-align: center;
+            position: relative;
+            height: 120vh;
+            background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_index_1.jpg?raw=true') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
         }
         .hero::before {
             content: '';
@@ -136,7 +136,8 @@
             }
             .hero-title { font-size: 32px; } 
         }
-        /* Styly pro informační bloky v hero sekci */
+
+        /* Styly pro informační bloky */
         .info-grid {
             display: flex;
             justify-content: center;
@@ -146,13 +147,13 @@
         }
         .info-item {
             text-align: center;
-            color: #ffffff;
+            color: #333333;
             max-width: 200px;
         }
         .info-item i {
             font-size: 2rem;
             margin-bottom: 12px;
-            color: #ffffff;
+            color: #333333;
         }
         .info-item h3 {
             font-family: 'Playfair Display', serif;
@@ -163,7 +164,6 @@
         .info-item p {
             font-size: 0.9rem;
             font-weight: 300;
-            opacity: 0.9;
         }
     </style>
 </head>
@@ -178,14 +178,13 @@
             <a href="#">Kontakt</a>
         </nav>
     </header>
+
     <section class="hero">
         <div class="hero-content">
             <h2 class="hero-subtitle">Těšíme se na náš svatební den</h2>
             <h1 class="hero-title">KLÁRA & ROMAN</h1>
-            </div>
         </div>
     </section>
-
 
     <section class="countdown">
         <div class="countdown-title">Již brzy to spolu oslavíme</div>
@@ -207,23 +206,26 @@
                 <span class="label">Sekundy</span>
             </div>
         </div>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <i class="fa-regular fa-calendar-days"></i>
+                <h3>Datum</h3>
+                <p>4. září 2027</p>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Lokalita</h3>
+                <p>Místo konání</p>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Dress Code</h3>
+                <p>Semi-Formal</p>
+            </div>
+        </div>
     </section>
-            <div class="info-grid">
-                <div class="info-item">
-                    <i class="fa-regular fa-calendar-days"></i>
-                    <h3>Datum</h3>
-                    <p>4. září 2027</p>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h3>Lokalita</h3>
-                    <p>Místo konání</p>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-user-tie"></i>
-                    <h3>Dress Code</h3>
-                    <p>Semi-Formal</p>
-                </div>
+
     <script>
         // Zde nastav datum svatby (Rok, Měsíc-1, Den, Hodina, Minuta, Sekunda)
         const weddingDate = new Date(2027, 8, 4, 12, 0, 0).getTime();
