@@ -112,30 +112,6 @@
             letter-spacing: 1px;
             color: #888;
         }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-                padding: 15px;
-            }
-
-            header .logo {
-                margin-bottom: 15px;
-                text-align: center;
-            }
-
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            nav a {
-                margin-left: 0;
-            }
-            .hero-title { font-size: 32px; } 
-        }
 
         /* Styly pro informační bloky */
         .info-grid {
@@ -165,21 +141,68 @@
             font-size: 0.85rem;
             font-weight: 300;
         }
-       @media (max-width: 600px) {
-    .info-grid {
-        gap: 5px;
-    }
-    .info-item h3 {
-        font-size: 0.9rem;
-    }
-    .info-item p {
-        font-size: 0.75rem;
-    }
-}
-    .info-item {
-        width: 100%;
-    }
-}
+
+        /* Styly pro tlačítko pod bloky */
+        .more-info-btn-container {
+            margin-top: 40px;
+            text-align: center;
+            width: 100%;
+        }
+        .btn-outline {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 1px solid #333;
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+
+            header .logo {
+                margin-bottom: 15px;
+                text-align: center;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                margin-left: 0;
+            }
+            .hero-title { font-size: 32px; } 
+        }
+
+        @media (max-width: 600px) {
+            .info-grid {
+                gap: 5px;
+            }
+            .info-item h3 {
+                font-size: 0.9rem;
+            }
+            .info-item p {
+                font-size: 0.75rem;
+            }
+            .info-item {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -188,7 +211,7 @@
         <nav>
             <a href="#">Úvod</a>
             <a href="#">O nás</a>
-            <a href="#">Svatba</a>
+            <a href="#svatba">Svatba</a>
             <a href="galerie.html">Galerie</a>
             <a href="#">Kontakt</a>
         </nav>
@@ -238,9 +261,10 @@
                 <h3>Dress Code</h3>
                 <p>Semi-Formální</p>
             </div>
-            <div class="more-info-btn-container">
-    <a href="#svatba" class="btn-outline">VÍCE INFO O SVATBĚ &rarr;</a>
-</div>
+        </div>
+
+        <div class="more-info-btn-container">
+            <a href="#svatba" class="btn-outline">VÍCE INFO O SVATBĚ &rarr;</a>
         </div>
     </section>
 
