@@ -125,7 +125,7 @@
             color: #888;
         }
 
-        /* Styly pro informační bloky (počítač) - ZVĚTŠENÝ TEXT A IKONY */
+        /* Styly pro informační bloky */
         .info-grid {
             display: flex;
             justify-content: center;
@@ -139,23 +139,22 @@
             width: 30%;
         }
         .info-item i {
-            font-size: 2.8rem; /* Původně 2rem */
+            font-size: 2.8rem;
             margin-bottom: 16px;
             color: #333333;
         }
         .info-item h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem; /* Původně 1.1rem */
+            font-size: 1.4rem;
             margin-bottom: 8px;
             letter-spacing: 1px;
         }
         .info-item p {
-            font-size: 1.05rem; /* Původně 0.85rem */
+            font-size: 1.05rem;
             font-weight: 300;
             line-height: 1.5;
         }
 
-        /* Styly pro tlačítko pod bloky */
         .more-info-btn-container {
             margin-top: 50px;
             text-align: center;
@@ -214,6 +213,69 @@
             text-align: center;
         }
 
+        /* Sekce RSVP / Dejte nám vědět */
+        .rsvp-section {
+            position: relative;
+            min-height: 85vh;
+            /* Zde nahraďte URL za odkaz na vámi vybraný obrázek pozadí */
+            background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_index_3.jpeg?raw=true') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 60px 8%;
+        }
+        .rsvp-card {
+            background-color: rgba(250, 249, 246, 0.92);
+            padding: 50px 40px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .rsvp-subtitle {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        .rsvp-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: #222;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .rsvp-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            font-weight: 300;
+            margin-bottom: 35px;
+        }
+        .btn-rsvp {
+            display: inline-block;
+            padding: 16px 40px;
+            background-color: #8c7a6b; /* Barva tlačítka (lze upravit dle potřeby) */
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .btn-rsvp:hover {
+            background-color: #736254;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
         /* Responsive zobrazení a Mobilní menu */
         @media (max-width: 768px) {
             header {
@@ -246,7 +308,6 @@
             .hero-title { font-size: 32px; } 
             .story-title { font-size: 26px; }
 
-            /* Zobrazení informačních bloků na mobilech */
             .info-grid {
                 flex-direction: column;
                 align-items: center;
@@ -265,6 +326,18 @@
             .info-item p {
                 font-size: 1rem;
             }
+
+            /* RSVP sekce na mobilu */
+            .rsvp-section {
+                justify-content: center;
+                padding: 40px 20px;
+            }
+            .rsvp-card {
+                padding: 40px 25px;
+            }
+            .rsvp-title {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
@@ -278,6 +351,7 @@
             <a href="#">Úvod</a>
             <a href="#pribeh">O nás</a>
             <a href="#svatba">Svatba</a>
+            <a href="#rsvp">Účast</a>
             <a href="galerie.html">Galerie</a>
             <a href="#">Kontakt</a>
         </nav>
@@ -345,6 +419,18 @@
             <div class="story-btn-container">
                 <a href="#pribeh" class="btn-outline">VÍCE O NÁS &rarr;</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Sekce RSVP / Potvrzení účasti -->
+    <section class="rsvp-section" id="rsvp">
+        <div class="rsvp-card">
+            <h3 class="rsvp-subtitle">DORAZÍTE?</h3>
+            <h2 class="rsvp-title">DEJTE NÁM VĚDĚT!</h2>
+            <p class="rsvp-text">
+                Budeme rádi, když nám dáte vědět, zda na svatbu dorazíte a případně v jakém počtu. Už teď se nemůžeme dočkat, až tu velkou slávu spolu oslavíme!
+            </p>
+            <a href="#" class="btn-rsvp">ODPOVĚDĚT &rarr;</a>
         </div>
     </section>
 
