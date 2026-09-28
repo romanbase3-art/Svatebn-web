@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <!DOCTYPE html>
-<html lang="cs">
-<head>
     <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naše svatba</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
@@ -115,29 +112,29 @@
             color: #888;
         }
         @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
 
-  header .logo {
-    margin-bottom: 15px;
-    text-align: center;
-  }
+            header .logo {
+                margin-bottom: 15px;
+                text-align: center;
+            }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
 
-  nav a {
-    margin-left: 0;
-  }
-           .hero-title { font-size: 32px; } 
-}
+            nav a {
+                margin-left: 0;
+            }
+            .hero-title { font-size: 32px; } 
+        }
     </style>
 </head>
 <body>
@@ -147,7 +144,7 @@
             <a href="#">Úvod</a>
             <a href="#">O nás</a>
             <a href="#">Svatba</a>
-            <a href="#">Galerie</a>
+            <a href="#galerie">Galerie</a>
             <a href="#">Kontakt</a>
         </nav>
     </header>
@@ -157,12 +154,14 @@
             <h1 class="hero-title">KLÁRA & ROMAN</h1>
         </div>
     </section>
-</body>
-</html>
-</head>
-<body>
-    <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/s02401yg5bve72i2wj0v" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p></div>
-<section class="countdown">
+
+    <div id="galerie" class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+        <p style="padding:0;margin:0">
+            <iframe src="https://padlet.com/embed/s02401yg5bve72i2wj0v" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe>
+        </p>
+    </div>
+
+    <section class="countdown">
         <div class="countdown-title">Již brzy to spolu oslavíme</div>
         <div class="timer">
             <div class="time-block">
@@ -183,29 +182,30 @@
             </div>
         </div>
     </section>
-<script>
-    // Zde nastav datum svatby (Rok, Měsíc-1, Den, Hodina, Minuta, Sekunda)
-    const weddingDate = new Date(2027, 8, 4, 12, 0, 0).getTime();
 
-    const timer = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
+    <script>
+        // Zde nastav datum svatby (Rok, Měsíc-1, Den, Hodina, Minuta, Sekunda)
+        const weddingDate = new Date(2027, 8, 4, 12, 0, 0).getTime();
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
 
-        document.getElementById("days").innerText = String(days).padStart(2, '0');
-        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        if (distance < 0) {
-            clearInterval(timer);
-            document.querySelector(".countdown-title").innerText = "Den D je tady!";
-        }
-    }, 1000);
-</script>
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.querySelector(".countdown-title").innerText = "Den D je tady!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
