@@ -40,16 +40,22 @@
             text-transform: uppercase;
         }
         .gallery-container {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 10px;
+            width: 100%;
         }
         .gallery-title {
             font-family: 'Playfair Display', serif;
             text-align: center;
             font-size: 36px;
-            margin-bottom: 30px;
+            margin: 15px 0;
             color: #333;
+        }
+        .padlet-iframe {
+            width: 100%;
+            height: calc(100vh - 150px);
+            min-height: 700px;
+            border: none;
+            display: block;
         }
         @media (max-width: 768px) {
             header {
@@ -90,11 +96,7 @@
 
     <main class="gallery-container">
         <h1 class="gallery-title">Fotogalerie</h1>
-        <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
-            <p style="padding:0;margin:0">
-                <iframe src="https://padlet.com/embed/s02401yg5bve72i2wj0v" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:700px;display:block;padding:0;margin:0"></iframe>
-            </p>
-        </div>
+        <iframe src="https://padlet.com/embed/s02401yg5bve72i2wj0v" allow="camera;microphone;geolocation;display-capture;clipboard-write" class="padlet-iframe"></iframe>
     </main>
 </body>
 </html>
