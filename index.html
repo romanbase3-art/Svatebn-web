@@ -24,6 +24,7 @@
             padding: 20px 40px;
             background-color: #ffffff;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
         }
         .logo {
             font-family: 'Playfair Display', serif;
@@ -40,6 +41,17 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
+
+        /* Ikona mobilního menu (na počítači skrytá) */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
         .hero {
             position: relative;
             height: 120vh;
@@ -117,32 +129,29 @@
         .info-grid {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            gap: 40px;
+            gap: 15px;
             margin-top: 50px;
-            flex-direction: row;
+            flex-wrap: nowrap;
         }
         .info-item {
             text-align: center;
             color: #333333;
-            flex: 1;
-            max-width: 250px;
+            width: 30%;
         }
         .info-item i {
-            font-size: 2.3rem;
+            font-size: 2rem;
             margin-bottom: 12px;
             color: #333333;
         }
         .info-item h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            margin-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
             letter-spacing: 1px;
         }
         .info-item p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 300;
-            line-height: 1.4;
         }
 
         /* Styly pro tlačítko pod bloky */
@@ -192,39 +201,50 @@
             font-weight: 300;
         }
 
+        /* Responsive zobrazení a Mobilní menu */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: center;
-                padding: 15px;
+                padding: 20px 15px;
             }
 
-            header .logo {
-                margin-bottom: 15px;
-                text-align: center;
+            .menu-toggle {
+                display: block;
+                margin-top: 15px;
             }
 
             nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            nav.active {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
             }
 
             nav a {
-                margin-left: 0;
+                margin: 10px 0;
+                font-size: 13px;
             }
+
             .hero-title { font-size: 32px; } 
             .story-title { font-size: 26px; }
+        }
 
-            /* Zobrazení pod sebou na telefonu */
+        @media (max-width: 600px) {
             .info-grid {
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
+                gap: 5px;
+            }
+            .info-item h3 {
+                font-size: 0.9rem;
+            }
+            .info-item p {
+                font-size: 0.75rem;
             }
             .info-item {
-                max-width: 100%;
                 width: 100%;
             }
         }
@@ -233,7 +253,10 @@
 <body>
     <header>
         <div class="logo">KLÁRA & ROMAN</div>
-        <nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otevřít menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="mainNav">
             <a href="#">Úvod</a>
             <a href="#pribeh">O nás</a>
             <a href="#svatba">Svatba</a>
@@ -244,7 +267,7 @@
 
     <section class="hero">
         <div class="hero-content">
-            <h2 class="hero-subtitle">Těšíme se na náš<br>svatební den</h2>
+            <h2 class="hero-subtitle">Těšíme se na náš svatební den</h2>
             <h1 class="hero-title">KLÁRA & ROMAN</h1>
         </div>
     </section>
@@ -274,7 +297,7 @@
             <div class="info-item">
                 <i class="fa-regular fa-calendar-days"></i>
                 <h3>Datum</h3>
-                <p>4. září 2027<br>obřad od 12:00</p>
+                <p>4. září 2027</p>
             </div>
             <div class="info-item">
                 <i class="fa-solid fa-location-dot"></i>
@@ -298,13 +321,28 @@
         <div class="story-container">
             <h2 class="story-title">Znáte náš příběh?</h2>
             <p class="story-text">
-               Náš příběh začal v jednom vysokoškolském klubu. Byla to láska na třetí pohled. Od té doby jsme společně ušli pořádný kus cesty, od sdílení kolejního pokoje až po budování vlastního domu.
+                Zde můžete napsat váš osobní příběh – jak jste se seznámili, co spolu rádi podnikáte a jak přišla žádost o ruku. Text lze libovolně upravit podle vás.
             </p>
         </div>
     </section>
 
     <script>
-        // Zde nastav datum svatby (Rok, Měsíc-1, Den, Hodina, Minuta, Sekunda)
+        // Skript pro mobilní hamburger menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Odpočet času
         const weddingDate = new Date(2027, 8, 4, 12, 0, 0).getTime();
 
         const timer = setInterval(function() {
