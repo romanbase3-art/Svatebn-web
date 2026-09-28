@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerie - Naše svatba</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -23,6 +24,7 @@
             padding: 20px 40px;
             background-color: #ffffff;
             border-bottom: 1px solid #e0e0e0;
+            position: relative;
         }
         .logo {
             font-family: 'Playfair Display', serif;
@@ -39,6 +41,17 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
+
+        /* Ikona mobilního menu (na PC skrytá) */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
         .gallery-container {
             padding: 10px;
             width: 100%;
@@ -57,28 +70,40 @@
             border: none;
             display: block;
         }
+
+        /* Responsive zobrazení a Mobilní menu */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: center;
-                padding: 15px;
+                padding: 20px 15px;
             }
-            header .logo {
-                margin-bottom: 15px;
-                text-align: center;
+
+            .menu-toggle {
+                display: block;
+                margin-top: 15px;
             }
+
             nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            nav.active {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
             }
+
             nav a {
-                margin-left: 0;
+                margin: 10px 0;
+                font-size: 13px;
             }
+
             .gallery-title {
                 font-size: 28px;
             }
+
             .padlet-iframe {
                 height: 60vh;
                 min-height: 400px;
@@ -89,9 +114,12 @@
 <body>
     <header>
         <div class="logo">KLÁRA & ROMAN</div>
-        <nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otevřít menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="mainNav">
             <a href="index.html">Úvod</a>
-            <a href="index.html#o-nas">O nás</a>
+            <a href="index.html#pribeh">O nás</a>
             <a href="index.html#svatba">Svatba</a>
             <a href="galerie.html">Galerie</a>
             <a href="index.html#kontakt">Kontakt</a>
@@ -102,5 +130,22 @@
         <h1 class="gallery-title">Fotogalerie</h1>
         <iframe src="https://padlet.com/embed/s02401yg5bve72i2wj0v" allow="camera;microphone;geolocation;display-capture;clipboard-write" class="padlet-iframe"></iframe>
     </main>
+
+    <script>
+        // Skript pro mobilní hamburger menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
