@@ -125,11 +125,11 @@
             color: #888;
         }
 
-        /* Styly pro informační bloky (počítač) */
+        /* Styly pro informační bloky (počítač) - ZVĚTŠENÝ TEXT A IKONY */
         .info-grid {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin-top: 50px;
             flex-wrap: wrap;
         }
@@ -139,24 +139,25 @@
             width: 30%;
         }
         .info-item i {
-            font-size: 2rem;
-            margin-bottom: 12px;
+            font-size: 2.8rem; /* Původně 2rem */
+            margin-bottom: 16px;
             color: #333333;
         }
         .info-item h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            margin-bottom: 6px;
+            font-size: 1.4rem; /* Původně 1.1rem */
+            margin-bottom: 8px;
             letter-spacing: 1px;
         }
         .info-item p {
-            font-size: 0.85rem;
+            font-size: 1.05rem; /* Původně 0.85rem */
             font-weight: 300;
+            line-height: 1.5;
         }
 
         /* Styly pro tlačítko pod bloky */
         .more-info-btn-container {
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: center;
             width: 100%;
         }
@@ -245,21 +246,24 @@
             .hero-title { font-size: 32px; } 
             .story-title { font-size: 26px; }
 
-            /* Zobrazení informačních bloků pod sebou na mobilech a tabletech */
+            /* Zobrazení informačních bloků na mobilech */
             .info-grid {
                 flex-direction: column;
                 align-items: center;
-                gap: 30px;
+                gap: 35px;
             }
             .info-item {
                 width: 100%;
-                max-width: 300px;
+                max-width: 320px;
+            }
+            .info-item i {
+                font-size: 2.5rem;
             }
             .info-item h3 {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
             .info-item p {
-                font-size: 0.85rem;
+                font-size: 1rem;
             }
         }
     </style>
