@@ -61,18 +61,18 @@
 
         /* Hero sekce nahoře */
         .hero-about {
-    position: relative;
-    height: 60vh;
-    min-height: 400px;
-    /* Pozice 'center top' posune horní část fotky nahoru, čímž se obličeje posunou pod text */
-    background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_o-nas_1.jpg?raw=true') no-repeat center top/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    text-align: center;
-}
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_o-nas_1.jpg?raw=true') no-repeat center top/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 80px;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+        }
         .hero-about::before {
             content: '';
             position: absolute;
@@ -103,7 +103,7 @@
 
         /* Hlavní sekce profilů Klára & Roman */
         .profiles-section {
-            padding: 60px 20px 100px 20px;
+            padding: 60px 20px 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -137,9 +137,9 @@
 
         /* Textový box s přesahem nahoru */
         .profile-info {
-            background-color: #f2f0eb; /* Světlá krémová barva přesně podle předlohy */
+            background-color: #f2f0eb;
             padding: 45px 35px;
-            margin-top: -60px; /* Vytvoří překrytí přes fotku */
+            margin-top: -60px;
             width: 90%;
             position: relative;
             z-index: 2;
@@ -164,6 +164,51 @@
         }
         .profile-text:last-child {
             margin-bottom: 0;
+        }
+
+        /* Sekce Bobinka */
+        .pet-section {
+            max-width: 800px;
+            margin: 20px auto 60px auto;
+            padding: 0 20px;
+        }
+        .pet-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .pet-img-container {
+            width: 100%;
+            max-width: 600px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .pet-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .pet-info {
+            background-color: #e9e5dd;
+            padding: 40px 35px;
+            margin-top: -50px;
+            width: 85%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border-radius: 4px;
+            text-align: center;
+        }
+        .pet-badge {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8c7a6b;
+            margin-bottom: 8px;
+            font-weight: 500;
         }
 
         /* Návrat na hlavní stranu / tlačítko dole */
@@ -211,13 +256,16 @@
                 margin: 10px 0;
                 font-size: 13px;
             }
+            .hero-about {
+                padding-top: 60px;
+            }
             .hero-title {
                 font-size: 38px;
             }
             .profiles-grid {
                 gap: 60px;
             }
-            .profile-info {
+            .profile-info, .pet-info {
                 width: 95%;
                 padding: 35px 20px;
             }
@@ -256,13 +304,13 @@
             <!-- Profil KLÁRA -->
             <div class="profile-card">
                 <div class="profile-img-container">
-                    <!-- Vložte URL fotky Kláry -->
                     <img src="https://github.com/romanbase3-art/Svatebn-web/blob/main/fotka_o-nas_klara.jpg?raw=true" alt="Klára">
                 </div>
                 <div class="profile-info">
                     <h2 class="profile-name">KLÁRA</h2>
                     <p class="profile-text">
                         Kreativní půlka našeho týmu. Miluje estetiku, detail a tvoření všeho druhu.
+                    </p>
                     <p class="profile-text">
                         Bez Romana by byl její život plný nedokončených nápadů, chaosu v papírech a neodpovězených e-mailů. 
                     </p>
@@ -272,7 +320,6 @@
             <!-- Profil ROMAN -->
             <div class="profile-card">
                 <div class="profile-img-container">
-                    <!-- Vložte URL fotky Romana -->
                     <img src="https://github.com/romanbase3-art/Svatebn-web/blob/main/fotka_o-nas_roman.jpg?raw=true" alt="Roman">
                 </div>
                 <div class="profile-info">
@@ -286,6 +333,23 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Sekce Bobinka -->
+    <section class="pet-section">
+        <div class="pet-card">
+            <div class="pet-img-container">
+                <!-- Vložte URL fotky Bobinky na GitHubu -->
+                <img src="https://github.com/romanbase3-art/Svatebn-web/blob/main/fotka_o-nas_bobinka.jpg?raw=true" alt="Bobinka">
+            </div>
+            <div class="pet-info">
+                <span class="pet-badge"><i class="fa-solid fa-heart"></i> Naše děťátko</span>
+                <h2 class="profile-name">BOBINKA</h2>
+                <p class="profile-text">
+                    Náš milovaný králíček a neodmyslitelná součást naší malé rodinky. Bobinka je náš šéf domácnosti, rozdávač radosti a ten nejroztomilejší tvor, který dohlíží na všechny naše svatební přípravy.
+                </p>
+            </div>
         </div>
 
         <div class="back-home-container">
