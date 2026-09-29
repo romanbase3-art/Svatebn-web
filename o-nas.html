@@ -64,7 +64,8 @@
             position: relative;
             height: 60vh;
             min-height: 400px;
-            background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_o-nas_1.jpg?raw=true') no-repeat center top/cover;
+            /* Změněno z 'center top' na 'center center' nebo 'center 70%' dle potřeby */
+            background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_o-nas_1.jpg?raw=true') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -72,6 +73,14 @@
             align-items: center;
             color: #ffffff;
             text-align: center;
+        }
+
+        /* Specifické dobarvení / posun výřezu pro PC a velké displeje */
+        @media (min-width: 992px) {
+            .hero-about {
+                height: 70vh; /* Lehce zvětšíme výšku na PC, aby se fotka lépe vešla */
+                background-position: center 65%; /* Posune těžiště fotky níže, takže uvidíte sebe a ne jen oblohu */
+            }
         }
         .hero-about::before {
             content: '';
