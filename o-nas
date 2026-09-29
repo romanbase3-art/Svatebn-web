@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O nás - Klára & Roman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a4a4a;
+            background-color: #faf9f6;
+        }
+
+        /* Hlavička a Navigace */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+            z-index: 100;
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #333;
+            text-decoration: none;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #4a4a4a;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        nav a.active {
+            font-weight: 500;
+            border-bottom: 2px solid #8c7a6b;
+            padding-bottom: 4px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Hero sekce nahoře */
+        .hero-about {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            /* Nahraďte URL vaší společnou fotkou na šířku */
+            background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_index_1.jpg?raw=true') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+        }
+        .hero-about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-subtitle {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 400;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        /* Hlavní sekce profilů Klára & Roman */
+        .profiles-section {
+            padding: 60px 20px 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .profiles-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* Karta jednotlivé osoby */
+        .profile-card {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-img-container {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Textový box s přesahem nahoru */
+        .profile-info {
+            background-color: #f2f0eb; /* Světlá krémová barva přesně podle předlohy */
+            padding: 45px 35px;
+            margin-top: -60px; /* Vytvoří překrytí přes fotku */
+            width: 90%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border-radius: 4px;
+        }
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #222;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        .profile-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        .profile-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Návrat na hlavní stranu / tlačítko dole */
+        .back-home-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn-outline {
+            display: inline-block;
+            padding: 14px 32px;
+            border: 1px solid #333;
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Mobilní optimalizace */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 20px 15px;
+            }
+            .menu-toggle {
+                display: block;
+                margin-top: 15px;
+            }
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
+            }
+            nav.active {
+                display: flex;
+            }
+            nav a {
+                margin: 10px 0;
+                font-size: 13px;
+            }
+            .hero-title {
+                font-size: 38px;
+            }
+            .profiles-grid {
+                gap: 60px;
+            }
+            .profile-info {
+                width: 95%;
+                padding: 35px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hlavička -->
+    <header>
+        <a href="index.html" class="logo">KLÁRA & ROMAN</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otevřít menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="mainNav">
+            <a href="index.html">Úvod</a>
+            <a href="o-nas.html" class="active">O nás</a>
+            <a href="index.html#svatba">Svatba</a>
+            <a href="index.html#rsvp">Účast</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="#">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Baner nahoře -->
+    <section class="hero-about">
+        <div class="hero-content">
+            <h2 class="hero-subtitle">KLÁRA & ROMAN</h2>
+            <h1 class="hero-title">O NÁS</h1>
+        </div>
+    </section>
+
+    <!-- Profily Kláry a Romana -->
+    <section class="profiles-section">
+        <div class="profiles-grid">
+
+            <!-- Profil KLÁRA -->
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <!-- Vložte URL fotky Kláry -->
+                    <img src="https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_index_2.jpg?raw=true" alt="Klára">
+                </div>
+                <div class="profile-info">
+                    <h2 class="profile-name">KLÁRA</h2>
+                    <p class="profile-text">
+                        Kreativní půlka našeho týmu. Miluje estetiku, detail a tvoření všeho druhu. Má neuvěřitelnou trpělivost a cit pro atmosféru, i když občas dokáže ztratit klíče i na úplně prázdném stole.
+                    </p>
+                    <p class="profile-text">
+                        Bez Romana by byl její život plný nedokončených nápadů, chaosu v papírech a neodpovězených e-mailů. 
+                    </p>
+                </div>
+            </div>
+
+            <!-- Profil ROMAN -->
+            <div class="profile-card">
+                <div class="profile-img-container">
+                    <!-- Vložte URL fotky Romana -->
+                    <img src="https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_index_1.jpg?raw=true" alt="Roman">
+                </div>
+                <div class="profile-info">
+                    <h2 class="profile-name">ROMAN</h2>
+                    <p class="profile-text">
+                        Exaktní a praktická půlka našeho dua. Miluje technologie, řád a když má všechno své jasně dané místo. Pro každý problém má hned tři technická řešení.
+                    </p>
+                    <p class="profile-text">
+                        Bez Kláry by jeho život byl sice dokonale zorganizovaný, ale chyběly by mu barvy, spontánnost a ten správný nádech romantiky.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="back-home-container">
+            <a href="index.html" class="btn-outline">&larr; ZPĚT NA ÚVODNÍ STRÁNKU</a>
+        </div>
+    </section>
+
+    <script>
+        // Mobilní menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
