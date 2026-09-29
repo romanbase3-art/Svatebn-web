@@ -301,10 +301,38 @@
             font-weight: 300;
         }
 
+        /* --- ZÁVĚREČNÝ BLOK (TEXT + FOTKA) --- */
+        .story-outro {
+            text-align: center;
+            margin-top: 70px;
+            padding: 0 20px;
+        }
+        .story-outro-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-style: italic;
+            color: #333;
+            letter-spacing: 1px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+        .story-outro-img-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .story-outro-img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* Návrat na hlavní stranu / tlačítko dole */
         .back-home-container {
             text-align: center;
-            margin-top: 80px;
+            margin-top: 60px;
             margin-bottom: 60px;
         }
         .btn-outline {
@@ -384,6 +412,9 @@
             }
             .timeline-year {
                 font-size: 42px;
+            }
+            .story-outro-text {
+                font-size: 20px;
             }
         }
     </style>
@@ -478,7 +509,7 @@
             <div class="timeline-item left">
                 <div class="timeline-year">2021</div>
                 <p class="timeline-text">
-                    Naše první setkání a přeskočení první jiskry. Stali jsme se párem
+                    Naše první setkání a přeskočení první jiskry. Stali jsme se párem.
                 </p>
             </div>
 
@@ -486,7 +517,7 @@
             <div class="timeline-item right">
                 <div class="timeline-year">2022</div>
                 <p class="timeline-text">
-                    Začali jsme společně bydlet na kolejích.
+                    Začali jsme společně bydlet na kolejích. Jeli jsme na naší první společnou dovolenou.
                 </p>
             </div>
 
@@ -494,7 +525,7 @@
             <div class="timeline-item left">
                 <div class="timeline-year">2023</div>
                 <p class="timeline-text">
-                    Roman dodělal školu a přestěhoval se za Klárou do Libiše.
+                    Roman dodělal školu a přestěhoval se za Klárou do Libiše
                 </p>
             </div>
 
@@ -502,7 +533,7 @@
             <div class="timeline-item right">
                 <div class="timeline-year">2024</div>
                 <p class="timeline-text">
-                   Klára dodělala bakalářské studium.
+                    Klára dodělala bakalářské studium.
                 </p>
             </div>
 
@@ -510,7 +541,7 @@
             <div class="timeline-item left">
                 <div class="timeline-year">2025</div>
                 <p class="timeline-text">
-                    Užíváme si dovolenou v Thajsku.
+                    Užíváme si dovolenou v Thajsku. Do života na přihopsala Bobinka.
                 </p>
             </div>
 
@@ -518,7 +549,7 @@
             <div class="timeline-item right">
                 <div class="timeline-year">2026</div>
                 <p class="timeline-text">
-                    Dovolená na maledivách a následně zásnuby v Egyptě.
+                   Dovolená na Maledivách a následně zásnuby v Egyptě.
                 </p>
             </div>
 
@@ -530,6 +561,16 @@
                 </p>
             </div>
 
+        </div>
+
+        <!-- Závěrečný text a společná fotka -->
+        <div class="story-outro">
+            <h3 class="story-outro-text">
+                No a zbytek našeho společného života je před námi...
+            </h3>
+            <div class="story-outro-img-container">
+                <img src="vase_spolecna_fotka.jpg" alt="Klára a Roman - společný život před námi">
+            </div>
         </div>
 
         <div class="back-home-container">
