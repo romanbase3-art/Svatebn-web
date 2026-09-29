@@ -199,7 +199,7 @@
             z-index: 2;
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             border-radius: 4px;
-            text-align: left; /* Změněno ze 'center' na 'left' */
+            text-align: left;
         }
         .pet-badge {
             display: inline-block;
@@ -211,10 +211,49 @@
             font-weight: 500;
         }
 
+        /* Sekce "JAK TO CELÉ ZAČALO" (Časová osa) */
+        .story-section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .story-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #333;
+            margin-bottom: 60px;
+            line-height: 1.2;
+        }
+        .timeline-item {
+            margin-bottom: 50px;
+        }
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 400;
+            color: #d1cbc1; /* Jemná šedobéžová barva ročníku podle předlohy */
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        .timeline-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #4a4a4a;
+            max-width: 550px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
         /* Návrat na hlavní stranu / tlačítko dole */
         .back-home-container {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
+            margin-bottom: 60px;
         }
         .btn-outline {
             display: inline-block;
@@ -268,6 +307,12 @@
             .profile-info, .pet-info {
                 width: 95%;
                 padding: 35px 20px;
+            }
+            .story-title {
+                font-size: 32px;
+            }
+            .timeline-year {
+                font-size: 52px;
             }
         }
     </style>
@@ -349,6 +394,60 @@
                     Náš milovaný králíček a neodmyslitelná součást naší malé rodinky. Bobinka je náš šéf domácnosti, rozdávač radosti a ten nejroztomilejší tvor, který dohlíží na všechny naše svatební přípravy.
                 </p>
             </div>
+        </div>
+    </section>
+
+    <!-- Sekce Časová osa - Jak to celé začalo -->
+    <section class="story-section">
+        <h2 class="story-title">JAK TO CELÉ<br>ZAČALO</h2>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2021</div>
+            <p class="timeline-text">
+                Naše první setkání a přeskočení první jiskry. Stali jsme se párem.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <p class="timeline-text">
+                Začali jsme společně bydlet na kolejích.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <p class="timeline-text">
+                Roman dodělal školu a přestěhoval se za Klárou do Libiše.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <p class="timeline-text">
+                Klára dodělala bakalářské studium.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <p class="timeline-text">
+                Užíváme si dovolenou v Thajsku.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <p class="timeline-text">
+                Dovolená na Maledivách a následně zásnuby v Egyptě.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-year">2027</div>
+            <p class="timeline-text">
+                Náš svatební rok! Den, kdy před vámi všemi oficiálně spojíme naše životy.
+            </p>
         </div>
 
         <div class="back-home-container">
