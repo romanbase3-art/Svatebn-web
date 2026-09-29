@@ -229,24 +229,31 @@
             text-align: center;
         }
 
+        /* Všechny bloky mají text VŽDY na střed */
         .timeline-item {
             margin-bottom: 50px;
-        }
-
-        /* Pouze dvě pozice: Uprostřed a Mírně vlevo */
-        .timeline-item.center {
             text-align: center;
         }
-        .timeline-item.center .timeline-text {
+
+        .timeline-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #4a4a4a;
+            max-width: 480px;
+            font-weight: 300;
             margin: 0 auto;
         }
 
-        .timeline-item.left {
-            text-align: left;
-            padding-left: 5%;
+        /* Uposunutí celého bloku do stran bez změny zarovnání textu */
+        .timeline-item.center {
+            margin-left: auto;
+            margin-right: auto;
         }
-        .timeline-item.left .timeline-text {
-            margin: 0;
+
+        .timeline-item.shift-left {
+            margin-left: 0;
+            margin-right: auto;
+            padding-left: 5%;
         }
 
         .timeline-year {
@@ -257,13 +264,6 @@
             letter-spacing: 2px;
             margin-bottom: 12px;
             line-height: 1;
-        }
-        .timeline-text {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #4a4a4a;
-            max-width: 480px;
-            font-weight: 300;
         }
 
         /* Návrat na hlavní stranu / tlačítko dole */
@@ -331,7 +331,7 @@
             .timeline-year {
                 font-size: 52px;
             }
-            .timeline-item.left {
+            .timeline-item.shift-left {
                 padding-left: 2%;
             }
         }
@@ -421,7 +421,7 @@
     <section class="story-section">
         <h2 class="story-title">JAK TO CELÉ<br>ZAČALO</h2>
 
-        <!-- 2021: Střed -->
+        <!-- 2021: Uprostřed -->
         <div class="timeline-item center">
             <div class="timeline-year">2021</div>
             <p class="timeline-text">
@@ -429,15 +429,15 @@
             </p>
         </div>
 
-        <!-- 2022: Mírně vlevo -->
-        <div class="timeline-item left">
+        <!-- 2022: Uposunuté vlevo (text stále vystředěný) -->
+        <div class="timeline-item shift-left">
             <div class="timeline-year">2022</div>
             <p class="timeline-text">
                 První společná dovolená, spousta procestovaných míst a rozhodnutí začít budovat společný domov.
             </p>
         </div>
 
-        <!-- 2023: Střed -->
+        <!-- 2023: Uprostřed -->
         <div class="timeline-item center">
             <div class="timeline-year">2023</div>
             <p class="timeline-text">
@@ -445,15 +445,15 @@
             </p>
         </div>
 
-        <!-- 2024: Mírně vlevo -->
-        <div class="timeline-item left">
+        <!-- 2024: Uposunuté vlevo -->
+        <div class="timeline-item shift-left">
             <div class="timeline-year">2024</div>
             <p class="timeline-text">
                 Společné výzvy, zariaďování bydlení a vytváření vzpomínek, na které nikdy nezapomeneme.
             </p>
         </div>
 
-        <!-- 2025: Střed -->
+        <!-- 2025: Uprostřed -->
         <div class="timeline-item center">
             <div class="timeline-year">2025</div>
             <p class="timeline-text">
@@ -461,15 +461,15 @@
             </p>
         </div>
 
-        <!-- 2026: Mírně vlevo -->
-        <div class="timeline-item left">
+        <!-- 2026: Uposunuté vlevo -->
+        <div class="timeline-item shift-left">
             <div class="timeline-year">2026</div>
             <p class="timeline-text">
                 Doladit poslední detaily, vybrat šaty a odpočítávat dny do našeho velkého dne.
             </p>
         </div>
 
-        <!-- 2027: Střed -->
+        <!-- 2027: Uprostřed -->
         <div class="timeline-item center">
             <div class="timeline-year">2027</div>
             <p class="timeline-text">
