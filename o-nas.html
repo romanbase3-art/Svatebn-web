@@ -211,10 +211,10 @@
             font-weight: 500;
         }
 
-        /* Sekce "JAK TO CELÉ ZAČALO" */
+        /* --- STYLOVÁNÍ ČASOVÉ OSY (ZIG-ZAG) --- */
         .story-section {
             padding: 80px 20px;
-            max-width: 850px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         .story-title {
@@ -224,52 +224,87 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             color: #333;
-            margin-bottom: 70px;
+            margin-bottom: 80px;
             line-height: 1.2;
             text-align: center;
         }
 
-        /* Všechny bloky mají text VŽDY na střed */
-        .timeline-item {
-            margin-bottom: 50px;
-            text-align: center;
-        }
-
-        .timeline-text {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #4a4a4a;
-            max-width: 480px;
-            font-weight: 300;
+        .timeline {
+            position: relative;
             margin: 0 auto;
         }
 
-        /* Uposunutí celého bloku do stran bez změny zarovnání textu */
-        .timeline-item.center {
-            margin-left: auto;
-            margin-right: auto;
+        /* Svislá vodící čára uprostřed */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #e0dacf;
+            top: 20px;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -1px;
         }
 
-        .timeline-item.shift-left {
-            margin-left: 0;
-            margin-right: auto;
-            padding-left: 5%;
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        /* Kolečko na čáře */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            right: -6px;
+            background-color: #faf9f6;
+            border: 2px solid #8c7a6b;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Levá strana (Liché roky) */
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        /* Pravá strana (Sudé roky) */
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-item.right::after {
+            left: -6px;
         }
 
         .timeline-year {
             font-family: 'Playfair Display', serif;
-            font-size: 64px;
+            font-size: 52px;
             font-weight: 400;
-            color: #d1cbc1;
+            color: #8c7a6b;
             letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             line-height: 1;
+        }
+
+        .timeline-text {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            font-weight: 300;
         }
 
         /* Návrat na hlavní stranu / tlačítko dole */
         .back-home-container {
             text-align: center;
-            margin-top: 70px;
+            margin-top: 80px;
             margin-bottom: 60px;
         }
         .btn-outline {
@@ -288,7 +323,7 @@
             color: #fff;
         }
 
-        /* Mobilní optimalizace */
+        /* Mobilní responsive rozvržení pro časovou osu */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -328,11 +363,27 @@
             .story-title {
                 font-size: 32px;
             }
-            .timeline-year {
-                font-size: 52px;
+
+            /* Časová osa na mobilech - posun do levého pruhu */
+            .timeline::after {
+                left: 20px;
             }
-            .timeline-item.shift-left {
-                padding-left: 2%;
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 15px;
+            }
+            .timeline-item.left, 
+            .timeline-item.right {
+                left: 0;
+                text-align: left;
+            }
+            .timeline-item.left::after, 
+            .timeline-item.right::after {
+                left: 14px;
+            }
+            .timeline-year {
+                font-size: 42px;
             }
         }
     </style>
@@ -421,60 +472,64 @@
     <section class="story-section">
         <h2 class="story-title">JAK TO CELÉ<br>ZAČALO</h2>
 
-        <!-- 2021: Uprostřed -->
-        <div class="timeline-item center">
-            <div class="timeline-year">2021</div>
-            <p class="timeline-text">
-                Naše první setkání a přeskočení první jiskry. Zjišťujeme, že i přes odlišné povahy si neskutečně rozumíme.
-            </p>
-        </div>
+        <div class="timeline">
 
-        <!-- 2022: Uposunuté vlevo (text stále vystředěný) -->
-        <div class="timeline-item shift-left">
-            <div class="timeline-year">2022</div>
-            <p class="timeline-text">
-                První společná dovolená, spousta procestovaných míst a rozhodnutí začít budovat společný domov.
-            </p>
-        </div>
+            <!-- 2021 (VLEVO) -->
+            <div class="timeline-item left">
+                <div class="timeline-year">2021</div>
+                <p class="timeline-text">
+                    Naše první setkání a přeskočení první jiskry. Zjišťujeme, že i přes odlišné povahy si neskutečně rozumíme.
+                </p>
+            </div>
 
-        <!-- 2023: Uprostřed -->
-        <div class="timeline-item center">
-            <div class="timeline-year">2023</div>
-            <p class="timeline-text">
-                Do našeho života přihopsala Bobinka a z nás se oficiálně stala malá trojčlenná rodinka.
-            </p>
-        </div>
+            <!-- 2022 (VPRAVO) -->
+            <div class="timeline-item right">
+                <div class="timeline-year">2022</div>
+                <p class="timeline-text">
+                    První společná dovolená, spousta procestovaných míst a rozhodnutí začít budovat společný domov.
+                </p>
+            </div>
 
-        <!-- 2024: Uposunuté vlevo -->
-        <div class="timeline-item shift-left">
-            <div class="timeline-year">2024</div>
-            <p class="timeline-text">
-                Společné výzvy, zariaďování bydlení a vytváření vzpomínek, na které nikdy nezapomeneme.
-            </p>
-        </div>
+            <!-- 2023 (VLEVO) -->
+            <div class="timeline-item left">
+                <div class="timeline-year">2023</div>
+                <p class="timeline-text">
+                    Do našeho života přihopsala Bobinka a z nás se oficiálně stala malá trojčlenná rodinka.
+                </p>
+            </div>
 
-        <!-- 2025: Uprostřed -->
-        <div class="timeline-item center">
-            <div class="timeline-year">2025</div>
-            <p class="timeline-text">
-                Nezapomenutelný okamžik – Roman poklekl a Klára řekla své jasné „ANO!“. Začínají velké svatební přípravy.
-            </p>
-        </div>
+            <!-- 2024 (VPRAVO) -->
+            <div class="timeline-item right">
+                <div class="timeline-year">2024</div>
+                <p class="timeline-text">
+                    Společné výzvy, zařizování bydlení a vytváření vzpomínek, na které nikdy nezapomeneme.
+                </p>
+            </div>
 
-        <!-- 2026: Uposunuté vlevo -->
-        <div class="timeline-item shift-left">
-            <div class="timeline-year">2026</div>
-            <p class="timeline-text">
-                Doladit poslední detaily, vybrat šaty a odpočítávat dny do našeho velkého dne.
-            </p>
-        </div>
+            <!-- 2025 (VLEVO) -->
+            <div class="timeline-item left">
+                <div class="timeline-year">2025</div>
+                <p class="timeline-text">
+                    Nezapomenutelný okamžik – Roman poklekl a Klára řekla své jasné „ANO!“. Začínají velké svatební přípravy.
+                </p>
+            </div>
 
-        <!-- 2027: Uprostřed -->
-        <div class="timeline-item center">
-            <div class="timeline-year">2027</div>
-            <p class="timeline-text">
-                Náš svatební rok! Den, kdy před vámi všemi oficiálně spojíme naše životy.
-            </p>
+            <!-- 2026 (VPRAVO) -->
+            <div class="timeline-item right">
+                <div class="timeline-year">2026</div>
+                <p class="timeline-text">
+                    Doladit poslední detaily, vybrat šaty a odpočítávat dny do našeho velkého dne.
+                </p>
+            </div>
+
+            <!-- 2027 (VLEVO) -->
+            <div class="timeline-item left">
+                <div class="timeline-year">2027</div>
+                <p class="timeline-text">
+                    Náš svatební rok! Den, kdy před vámi všemi oficiálně spojíme naše životy.
+                </p>
+            </div>
+
         </div>
 
         <div class="back-home-container">
