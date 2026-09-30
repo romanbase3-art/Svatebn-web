@@ -7,12 +7,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <!-- FontAwesome pro ikony -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome ikony -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Základní nastavení */
+        /* Základní reset a nastavení */
         * {
             margin: 0;
             padding: 0;
@@ -21,121 +21,127 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f9f8f6;
+            background-color: #faf9f6;
             color: #4a4a4a;
             line-height: 1.8;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
             letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
-        /* Navigace */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
+        /* Hlavička & Navigace podle index.html */
+        header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 20px 40px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
             z-index: 1000;
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 3px;
+            font-weight: 400;
+            letter-spacing: 2px;
             color: #333;
             text-decoration: none;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
+        nav a {
+            margin-left: 20px;
             text-decoration: none;
-            color: #555;
+            color: #4a4a4a;
             font-size: 14px;
-            text-transform: uppercase;
             letter-spacing: 1px;
-            transition: color 0.3s;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #b5835a;
+        nav a:hover,
+        nav a.active {
+            color: #8c7a6b;
         }
 
-        /* Hero sekce nahoře */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Hero sekce */
         .hero-svatba {
             position: relative;
-            height: 55vh;
-            min-height: 380px;
-            /* Zde si případně změňte fotku pozadí */
-            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_o-nas_1.jpg?raw=true') no-repeat center center/cover;
+            height: 50vh;
+            min-height: 350px;
+            background: url('https://github.com/romanbase3-art/Svatebn-web/blob/main/pozadi_o-nas_1.jpg?raw=true') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: #ffffff;
             text-align: center;
-            padding-top: 60px;
         }
 
-        .hero-svatba .subtitle {
+        .hero-svatba::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+        }
+
+        .hero-subtitle {
             font-size: 14px;
             letter-spacing: 4px;
-            margin-bottom: 10px;
             text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 300;
         }
 
-        .hero-svatba h1 {
+        .hero-title {
             font-size: 42px;
-            color: #ffffff;
-            line-height: 1.2;
+            letter-spacing: 3px;
         }
 
         /* Sekce Odpočet */
-        .countdown-section {
-            background-color: #f2eee9;
-            padding: 40px 20px;
+        .countdown {
+            padding: 50px 20px;
+            background-color: #ffffff;
             text-align: center;
-        }
-
-        .countdown-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 30px 20px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-bottom: 1px solid #efece8;
         }
 
         .countdown-title {
+            font-family: 'Playfair Display', serif;
             font-size: 20px;
-            color: #666;
-            margin-bottom: 15px;
+            font-style: italic;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
         }
 
         .timer {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            font-family: 'Cormorant Garamond', serif;
+            gap: 30px;
         }
 
         .time-block {
@@ -144,47 +150,49 @@
             align-items: center;
         }
 
-        .time-number {
-            font-size: 36px;
+        .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
             color: #333;
-            font-weight: 600;
-            line-height: 1;
+            margin-bottom: 5px;
         }
 
-        .time-label {
-            font-family: 'Montserrat', sans-serif;
+        .label {
             font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: #888;
-            text-transform: lowercase;
-            margin-top: 5px;
         }
 
-        /* Hlavní obsah s informacemi */
+        /* Hlavní karta s podrobnými informacemi */
         .info-container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
         .info-card {
-            margin-bottom: 60px;
-        }
-
-        .info-card:last-child {
-            margin-bottom: 0;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #efece8;
+            transition: transform 0.3s ease;
         }
 
         .info-icon {
-            font-size: 32px;
-            color: #b5835a;
+            font-size: 2.5rem;
+            color: #333333;
             margin-bottom: 15px;
         }
 
         .info-card h2 {
-            font-size: 26px;
+            font-size: 24px;
             color: #333;
             margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .info-card p {
@@ -192,6 +200,7 @@
             color: #555;
             max-width: 650px;
             margin: 0 auto 10px auto;
+            font-weight: 300;
         }
 
         .info-card .highlight {
@@ -201,193 +210,229 @@
         }
 
         .info-card a.link {
-            color: #b5835a;
+            color: #8c7a6b;
             text-decoration: underline;
             transition: color 0.3s;
         }
 
         .info-card a.link:hover {
-            color: #8c603e;
+            color: #333;
         }
 
-        /* Oddělovač */
-        .divider {
-            width: 50px;
-            height: 1px;
-            background-color: #d1c7bd;
-            margin: 40px auto;
+        /* Tlačítka */
+        .btn-rsvp {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background-color: #8c7a6b;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* Patčka */
+        .btn-rsvp:hover {
+            background-color: #736254;
+            transform: translateY(-2px);
+        }
+
+        /* Patička */
         footer {
             text-align: center;
             padding: 30px;
-            background-color: #efece8;
+            background-color: #ffffff;
             font-size: 13px;
             color: #777;
+            border-top: 1px solid #e0e0e0;
         }
 
-        /* Responsivita pro mobilní zařízení */
+        /* Responsivita */
         @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 20px 15px;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-top: 15px;
+            }
+
             nav {
-                padding: 15px 20px;
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                margin-top: 15px;
             }
 
-            .nav-links li {
-                margin-left: 15px;
+            nav.active {
+                display: flex;
             }
 
-            .hero-svatba h1 {
+            nav a {
+                margin: 10px 0;
+                font-size: 13px;
+            }
+
+            .hero-title {
                 font-size: 30px;
             }
 
             .timer {
-                gap: 12px;
+                gap: 15px;
             }
 
-            .time-number {
-                font-size: 28px;
+            .number {
+                font-size: 30px;
+            }
+
+            .info-card {
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigace -->
-    <nav>
-        <a href="index.html" class="logo">Klára & Roman</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Úvod</a></li>
-            <li><a href="o-nas.html">O nás</a></li>
-            <li><a href="svatba.html" class="active">Svatba</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-    </nav>
+    <!-- Hlavička a Navigace -->
+    <header>
+        <a href="index.html" class="logo">KLÁRA & ROMAN</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Otevřít menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav id="mainNav">
+            <a href="index.html">Úvod</a>
+            <a href="o-nas.html">O nás</a>
+            <a href="svatba.html" class="active">Svatba</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
 
     <!-- Hero Sekce -->
     <section class="hero-svatba">
-        <div class="subtitle">Svatba Klára & Roman</div>
-        <h1>Praktické informace</h1>
+        <div class="hero-content">
+            <h2 class="hero-subtitle">Svatba Klára & Roman</h2>
+            <h1 class="hero-title">PRAKTICKÉ INFORMACE</h1>
+        </div>
     </section>
 
     <!-- Odpočet času -->
-    <section class="countdown-section">
-        <div class="countdown-container">
-            <div class="countdown-title">UŽ SE TO BLÍŽÍ!</div>
-            <div class="timer" id="countdown">
-                <div class="time-block">
-                    <span class="time-number" id="days">00</span>
-                    <span class="time-label">Dní</span>
-                </div>
-                <div class="time-block">
-                    <span class="time-number">:</span>
-                </div>
-                <div class="time-block">
-                    <span class="time-number" id="hours">00</span>
-                    <span class="time-label">h</span>
-                </div>
-                <div class="time-block">
-                    <span class="time-number">:</span>
-                </div>
-                <div class="time-block">
-                    <span class="time-number" id="minutes">00</span>
-                    <span class="time-label">min</span>
-                </div>
-                <div class="time-block">
-                    <span class="time-number">:</span>
-                </div>
-                <div class="time-block">
-                    <span class="time-number" id="seconds">00</span>
-                    <span class="time-label">s</span>
-                </div>
+    <section class="countdown">
+        <div class="countdown-title">Již brzy to spolu oslavíme</div>
+        <div class="timer">
+            <div class="time-block">
+                <span class="number" id="days">00</span>
+                <span class="label">Dny</span>
+            </div>
+            <div class="time-block">
+                <span class="number" id="hours">00</span>
+                <span class="label">Hodiny</span>
+            </div>
+            <div class="time-block">
+                <span class="number" id="minutes">00</span>
+                <span class="label">Minuty</span>
+            </div>
+            <div class="time-block">
+                <span class="number" id="seconds">00</span>
+                <span class="label">Sekundy</span>
             </div>
         </div>
     </section>
 
-    <!-- Praktické informace -->
+    <!-- Hlavní informace -->
     <main class="info-container">
 
         <!-- Datum -->
         <div class="info-card">
             <div class="info-icon"><i class="fa-regular fa-calendar-days"></i></div>
-            <h2>Datum</h2>
-            <p class="highlight">04. 09. 2027</p>
-            <p>Obřad od 12:00 hod</p>
+            <h2>Datum a čas</h2>
+            <p class="highlight">4. září 2027</p>
+            <p>Obřad začíná ve 12:00 hod</p>
         </div>
-
-        <div class="divider"></div>
 
         <!-- Lokalita -->
         <div class="info-card">
             <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <h2>Lokalita</h2>
-            <p class="highlight">Zámecký park - Prčice</p>
-            <p> sem vložím přesnou adresu</p>
+            <h2>Místo konání</h2>
+            <p class="highlight">Zámecký park – Prčice</p>
+            <p>Přesná adresa bude doplněna</p>
         </div>
-
-        <div class="divider"></div>
 
         <!-- Dary -->
         <div class="info-card">
             <div class="info-icon"><i class="fa-solid fa-gift"></i></div>
-            <h2>Dary</h2>
-            <p>Pokud nás chcete obdarovat, budeme rádi za finanční podporu. Fyzické dary prosím nekupujte.</p>
+            <h2>Svatební dary</h2>
+            <p>Pokud nás chcete obdarovat, budeme nejvíce vděční za finanční příspěvek na naši společnou budoucnost. Fyzické dary prosím nekupujte.</p>
         </div>
-
-        <div class="divider"></div>
 
         <!-- Ubytování -->
         <div class="info-card">
             <div class="info-icon"><i class="fa-solid fa-bed"></i></div>
             <h2>Ubytování</h2>
-            <p>Kapacita ubytování je dostatečná pro všechny hosty. Prosím dejte nám vědět kdo ubytování využije</p>
-            <p>Můžete využít formulář na stránce <a href="kontakt.html" class="link">Kontakt</a>.</p>
+            <p>Kapacita ubytování je dostatečná pro všechny hosty. Dejte nám prosím vědět, zda ubytování využijete.</p>
+            <p>Můžete k tomu využít formulář na stránce <a href="kontakt.html" class="link">Kontakt</a>.</p>
         </div>
-
-        <div class="divider"></div>
 
         <!-- Dress Code -->
         <div class="info-card">
             <div class="info-icon"><i class="fa-solid fa-user-tie"></i></div>
             <h2>Dress Code</h2>
             <p>Na obřad prosím zvolte formální oblečení.</p>
-            <br>
-            <p>Velká část se bude odehrávat venku v zámeckém parku, zvažte proto, jaká obuv bude nejpohodlnější.</p>
-            <br>
-            <p>Netrváme na formálním oblečení až do konce akce, takže nezapomeňte přibalit něco pohodlného na afterparty a pro případ deště nebo chladnějšího počasí.</p>
+            <p>Velká část programu se bude odehrávat venku v zámeckém parku, zvažte proto volbu pohodlné obuvi.</p>
+            <p>Netrváme na formálním oblečení po celý den, nezapomeňte si proto přibalit i něco pohodlného na večerní afterparty a pro případ chladnějšího počasí.</p>
         </div>
 
     </main>
 
-    <!-- Patčka -->
+    <!-- Patička -->
     <footer>
         <p>&copy; 2027 Klára & Roman</p>
     </footer>
 
-    <!-- Skript pro živý odpočet -->
+    <!-- Skripty -->
     <script>
-        // Nastavte správné datum a čas svatby
-        const weddingDate = new Date("September 4, 2027 12:00:00").getTime();
+        // Mobilní hamburger menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+
+        // Zavření menu po kliknutí na odkaz
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Živý odpočet času z index.html
+        const weddingDate = new Date(2027, 8, 4, 12, 0, 0).getTime();
 
         const timer = setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
-
-            if (distance < 0) {
-                document.getElementById("countdown").innerHTML = "JSME SVOJI!";
-                clearInterval(timer);
-                return;
-            }
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.querySelector(".countdown-title").innerText = "Den D je tady!";
+            }
         }, 1000);
     </script>
 </body>
