@@ -21,7 +21,7 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #faf9f6;
+            background-color: #ffffff;
             color: #4a4a4a;
             line-height: 1.8;
         }
@@ -123,25 +123,25 @@
 
         /* Sekce Odpočet */
         .countdown {
-            padding: 50px 20px;
-            background-color: #ffffff;
+            padding: 60px 20px;
+            background-color: #faf9f6;
             text-align: center;
             border-bottom: 1px solid #efece8;
         }
 
         .countdown-title {
             font-family: 'Playfair Display', serif;
-            font-size: 20px;
+            font-size: 22px;
             font-style: italic;
             color: #4a4a4a;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             letter-spacing: 2px;
         }
 
         .timer {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 35px;
         }
 
         .time-block {
@@ -152,7 +152,7 @@
 
         .number {
             font-family: 'Playfair Display', serif;
-            font-size: 40px;
+            font-size: 42px;
             color: #333;
             margin-bottom: 5px;
         }
@@ -160,90 +160,83 @@
         .label {
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: #888;
         }
 
-        /* Hlavní kontejner s kartami */
-        .info-container {
-            max-width: 800px;
-            margin: 60px auto 40px auto;
-            padding: 0 20px;
+        /* Čistá sekce Informace (střídání podkladů bez rámečků/karet) */
+        .info-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 70px 20px 40px 20px;
+            text-align: center;
         }
 
-        .info-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 40px;
-            margin-bottom: 30px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid #efece8;
+        .info-item {
+            margin-bottom: 60px;
         }
 
         .info-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #333333;
             margin-bottom: 15px;
         }
 
-        .info-card h2 {
-            font-size: 24px;
+        .info-item h2 {
+            font-size: 26px;
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             letter-spacing: 1px;
         }
 
-        .info-card p {
+        .info-item p {
             font-size: 15px;
             color: #555;
-            max-width: 650px;
-            margin: 0 auto 10px auto;
+            max-width: 600px;
+            margin: 0 auto 8px auto;
             font-weight: 300;
+            line-height: 1.8;
         }
 
-        .info-card .highlight {
+        .info-item .highlight {
             font-size: 18px;
-            font-weight: 500;
-            color: #333;
+            font-weight: 400;
+            color: #222;
         }
 
-        .info-card a.link {
+        .info-item a.link {
             color: #8c7a6b;
             text-decoration: underline;
             transition: color 0.3s;
         }
 
-        .info-card a.link:hover {
+        .info-item a.link:hover {
             color: #333;
         }
 
-        /* Sekce Program Svatby podle předlohy */
+        /* Sekce Program Svatby (na jemně tónovaném pozadí) */
         .program-section {
-            max-width: 800px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
+            background-color: #faf9f6;
+            padding: 80px 20px;
             text-align: center;
+            border-top: 1px solid #efece8;
         }
 
         .program-title {
-            font-size: 38px;
+            font-size: 36px;
             color: #222;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
             letter-spacing: 3px;
             text-transform: uppercase;
         }
 
-        .program-card {
-            background-color: #ffffff;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            padding: 50px 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        .program-container {
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .program-item {
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         .program-item:last-child {
@@ -252,9 +245,9 @@
 
         .program-time {
             font-family: 'Playfair Display', serif;
-            font-size: 32px;
+            font-size: 34px;
             color: #222;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             letter-spacing: 1px;
         }
 
@@ -262,14 +255,15 @@
             font-size: 15px;
             color: #555;
             font-weight: 300;
-            max-width: 500px;
+            max-width: 480px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
         /* Patička */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 35px 20px;
             background-color: #ffffff;
             font-size: 13px;
             color: #777;
@@ -314,19 +308,19 @@
             }
 
             .program-time {
-                font-size: 26px;
+                font-size: 28px;
             }
 
             .timer {
-                gap: 15px;
+                gap: 18px;
             }
 
             .number {
-                font-size: 30px;
+                font-size: 32px;
             }
 
-            .info-card, .program-card {
-                padding: 30px 20px;
+            .info-item h2 {
+                font-size: 22px;
             }
         }
     </style>
@@ -379,11 +373,11 @@
         </div>
     </section>
 
-    <!-- Hlavní informace -->
-    <main class="info-container">
+    <!-- Hlavní informace (čistý styl bez obdélníkových karet) -->
+    <main class="info-section">
 
         <!-- Datum -->
-        <div class="info-card">
+        <div class="info-item">
             <div class="info-icon"><i class="fa-regular fa-calendar-days"></i></div>
             <h2>Datum a čas</h2>
             <p class="highlight">4. září 2027</p>
@@ -391,22 +385,22 @@
         </div>
 
         <!-- Lokalita -->
-        <div class="info-card">
+        <div class="info-item">
             <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <h2>Místo konání</h2>
+            <h2>Lokalita</h2>
             <p class="highlight">Zámecký park – Prčice</p>
             <p>Přesná adresa bude doplněna</p>
         </div>
 
         <!-- Dary -->
-        <div class="info-card">
+        <div class="info-item">
             <div class="info-icon"><i class="fa-solid fa-gift"></i></div>
             <h2>Svatební dary</h2>
             <p>Pokud nás chcete obdarovat, budeme nejvíce vděční za finanční příspěvek na naši společnou budoucnost. Fyzické dary prosím nekupujte.</p>
         </div>
 
         <!-- Ubytování -->
-        <div class="info-card">
+        <div class="info-item">
             <div class="info-icon"><i class="fa-solid fa-bed"></i></div>
             <h2>Ubytování</h2>
             <p>Kapacita ubytování je dostatečná pro všechny hosty. Dejte nám prosím vědět, zda ubytování využijete.</p>
@@ -414,9 +408,10 @@
         </div>
 
         <!-- Dress Code -->
-        <div class="info-card">
+        <div class="info-item">
             <div class="info-icon"><i class="fa-solid fa-user-tie"></i></div>
             <h2>Dress Code</h2>
+            <p class="highlight">Formální / Pohodlné</p>
             <p>Na obřad prosím zvolte formální oblečení.</p>
             <p>Velká část programu se bude odehrávat venku v zámeckém parku, zvažte proto volbu pohodlné obuvi.</p>
             <p>Netrváme na formálním oblečení po celý den, nezapomeňte si proto přibalit i něco pohodlného na večerní afterparty a pro případ chladnějšího počasí.</p>
@@ -424,10 +419,10 @@
 
     </main>
 
-    <!-- Sekce Program Svatby -->
+    <!-- Sekce Program Svatby (čistý styl) -->
     <section class="program-section">
         <h2 class="program-title">PROGRAM SVATBY</h2>
-        <div class="program-card">
+        <div class="program-container">
             
             <div class="program-item">
                 <div class="program-time">10:30</div>
