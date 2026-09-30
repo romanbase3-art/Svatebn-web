@@ -7,7 +7,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <!-- FontAwesome ikony -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -121,10 +121,10 @@
             letter-spacing: 3px;
         }
 
-        /* Spojený blok: Odpočet + Informace (jednotné pozadí #faf9f6) */
+        /* Spojený blok: Odpočet + Informace + Místo konání (jednotné pozadí #faf9f6) */
         .details-wrapper {
             background-color: #faf9f6;
-            padding-bottom: 20px;
+            padding-bottom: 40px;
         }
 
         /* Sekce Odpočet */
@@ -172,12 +172,12 @@
         .info-section {
             max-width: 700px;
             margin: 0 auto;
-            padding: 60px 20px 40px 20px;
+            padding: 40px 20px 20px 20px;
             text-align: center;
         }
 
         .info-item {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .info-icon {
@@ -216,6 +216,92 @@
 
         .info-item a.link:hover {
             color: #333;
+        }
+
+        /* Sekce Místo Konání podle vzoru */
+        .venue-section {
+            max-width: 650px;
+            margin: 20px auto 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .venue-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #222;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+        }
+
+        .venue-text-group {
+            margin-bottom: 30px;
+        }
+
+        .venue-name {
+            font-size: 18px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .venue-address {
+            font-size: 15px;
+            color: #555;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .venue-region {
+            font-size: 15px;
+            color: #555;
+            font-weight: 300;
+            margin-bottom: 4px;
+        }
+
+        .venue-note {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 35px;
+        }
+
+        .btn-navigate {
+            display: inline-block;
+            background-color: #857263;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 36px;
+            border-radius: 30px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .btn-navigate:hover {
+            background-color: #6e5e51;
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 260px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e8e4df;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* Sekce Program Svatby (na bílém pozadí #ffffff) */
@@ -307,6 +393,10 @@
                 font-size: 30px;
             }
 
+            .venue-title {
+                font-size: 30px;
+            }
+
             .program-title {
                 font-size: 28px;
             }
@@ -391,14 +481,6 @@
                 <p>Obřad začíná ve 12:00 hod</p>
             </div>
 
-            <!-- Lokalita -->
-            <div class="info-item">
-                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <h2>Lokalita</h2>
-                <p class="highlight">Zámecký park – Prčice</p>
-                <p>Přesná adresa bude doplněna</p>
-            </div>
-
             <!-- Dary -->
             <div class="info-item">
                 <div class="info-icon"><i class="fa-solid fa-gift"></i></div>
@@ -425,6 +507,26 @@
             </div>
 
         </main>
+
+        <!-- Místo konání (podle vzoru) -->
+        <section class="venue-section">
+            <h2 class="venue-title">MÍSTO<br>KONÁNÍ</h2>
+            
+            <div class="venue-text-group">
+                <p class="venue-name">Zámek Prčice</p>
+                <p class="venue-address">Karla Burky 1, 257 92</p>
+                <p class="venue-region">Sedlec-Prčice, Středočeský kraj</p>
+                <p class="venue-note">(Nejlépe vás navedou mapy.cz)</p>
+            </div>
+
+            <a href="https://mapy.cz/s/32822" target="_blank" class="btn-navigate">
+                NAVIGOVAT &rarr;
+            </a>
+
+            <div class="map-container">
+                <iframe src="https://frame.mapy.cz/s/32822" title="Mapa - Zámek Prčice" loading="lazy"></iframe>
+            </div>
+        </section>
 
     </div>
 
