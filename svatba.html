@@ -32,7 +32,7 @@
             letter-spacing: 2px;
         }
 
-        /* Hlavička & Navigace podle index.html */
+        /* Hlavička & Navigace */
         header {
             display: flex;
             justify-content: space-between;
@@ -164,10 +164,10 @@
             color: #888;
         }
 
-        /* Hlavní karta s podrobnými informacemi */
+        /* Hlavní kontejner s kartami */
         .info-container {
             max-width: 800px;
-            margin: 60px auto;
+            margin: 60px auto 40px auto;
             padding: 0 20px;
         }
 
@@ -179,7 +179,6 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             border: 1px solid #efece8;
-            transition: transform 0.3s ease;
         }
 
         .info-icon {
@@ -219,25 +218,52 @@
             color: #333;
         }
 
-        /* Tlačítka */
-        .btn-rsvp {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 30px;
-            background-color: #8c7a6b;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        /* Sekce Program Svatby podle předlohy */
+        .program-section {
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .btn-rsvp:hover {
-            background-color: #736254;
-            transform: translateY(-2px);
+        .program-title {
+            font-size: 38px;
+            color: #222;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .program-card {
+            background-color: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 50px 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .program-item {
+            margin-bottom: 40px;
+        }
+
+        .program-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .program-time {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #222;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .program-text {
+            font-size: 15px;
+            color: #555;
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         /* Patička */
@@ -283,6 +309,14 @@
                 font-size: 30px;
             }
 
+            .program-title {
+                font-size: 28px;
+            }
+
+            .program-time {
+                font-size: 26px;
+            }
+
             .timer {
                 gap: 15px;
             }
@@ -291,7 +325,7 @@
                 font-size: 30px;
             }
 
-            .info-card {
+            .info-card, .program-card {
                 padding: 30px 20px;
             }
         }
@@ -390,6 +424,44 @@
 
     </main>
 
+    <!-- Sekce Program Svatby -->
+    <section class="program-section">
+        <h2 class="program-title">PROGRAM SVATBY</h2>
+        <div class="program-card">
+            
+            <div class="program-item">
+                <div class="program-time">10:30</div>
+                <div class="program-text">Příjezd svatebčanů, drobné občerstvení a welcome drink</div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-time">12:00</div>
+                <div class="program-text">Svatební obřad v zámeckém parku</div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-time">13:10</div>
+                <div class="program-text">Společné focení a gratulace</div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-time">14:00</div>
+                <div class="program-text">Svatební hostina / raut</div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-time">16:30</div>
+                <div class="program-text">Krájení svatebního dortu</div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-time">18:00</div>
+                <div class="program-text">První tancování a večerní zábava</div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Patička -->
     <footer>
         <p>&copy; 2027 Klára & Roman</p>
@@ -405,14 +477,13 @@
             mainNav.classList.toggle('active');
         });
 
-        // Zavření menu po kliknutí na odkaz
         document.querySelectorAll('#mainNav a').forEach(link => {
             link.addEventListener('click', () => {
                 mainNav.classList.remove('active');
             });
         });
 
-        // Živý odpočet času z index.html
+        // Živý odpočet času
         const weddingDate = new Date(2027, 8, 4, 12, 0, 0).getTime();
 
         const timer = setInterval(function() {
