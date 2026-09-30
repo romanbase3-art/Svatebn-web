@@ -121,12 +121,16 @@
             letter-spacing: 3px;
         }
 
+        /* Spojený blok: Odpočet + Informace (jednotné pozadí #faf9f6) */
+        .details-wrapper {
+            background-color: #faf9f6;
+            padding-bottom: 20px;
+        }
+
         /* Sekce Odpočet */
         .countdown {
-            padding: 60px 20px;
-            background-color: #faf9f6;
+            padding: 60px 20px 20px 20px;
             text-align: center;
-            border-bottom: 1px solid #efece8;
         }
 
         .countdown-title {
@@ -164,11 +168,11 @@
             color: #888;
         }
 
-        /* Čistá sekce Informace (střídání podkladů bez rámečků/karet) */
+        /* Sekce Informace */
         .info-section {
             max-width: 700px;
             margin: 0 auto;
-            padding: 70px 20px 40px 20px;
+            padding: 60px 20px 40px 20px;
             text-align: center;
         }
 
@@ -214,9 +218,9 @@
             color: #333;
         }
 
-        /* Sekce Program Svatby (na jemně tónovaném pozadí) */
+        /* Sekce Program Svatby (na bílém pozadí #ffffff) */
         .program-section {
-            background-color: #faf9f6;
+            background-color: #ffffff;
             padding: 80px 20px;
             text-align: center;
             border-top: 1px solid #efece8;
@@ -350,76 +354,81 @@
         </div>
     </section>
 
-    <!-- Odpočet času -->
-    <section class="countdown">
-        <div class="countdown-title">Již brzy to spolu oslavíme</div>
-        <div class="timer">
-            <div class="time-block">
-                <span class="number" id="days">00</span>
-                <span class="label">Dny</span>
+    <!-- Spojený blok s jemným pozadím -->
+    <div class="details-wrapper">
+        
+        <!-- Odpočet času -->
+        <section class="countdown">
+            <div class="countdown-title">Již brzy to spolu oslavíme</div>
+            <div class="timer">
+                <div class="time-block">
+                    <span class="number" id="days">00</span>
+                    <span class="label">Dny</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">Hodiny</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">Minuty</span>
+                </div>
+                <div class="time-block">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">Sekundy</span>
+                </div>
             </div>
-            <div class="time-block">
-                <span class="number" id="hours">00</span>
-                <span class="label">Hodiny</span>
+        </section>
+
+        <!-- Hlavní informace -->
+        <main class="info-section">
+
+            <!-- Datum -->
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-regular fa-calendar-days"></i></div>
+                <h2>Datum a čas</h2>
+                <p class="highlight">4. září 2027</p>
+                <p>Obřad začíná ve 12:00 hod</p>
             </div>
-            <div class="time-block">
-                <span class="number" id="minutes">00</span>
-                <span class="label">Minuty</span>
+
+            <!-- Lokalita -->
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h2>Lokalita</h2>
+                <p class="highlight">Zámecký park – Prčice</p>
+                <p>Přesná adresa bude doplněna</p>
             </div>
-            <div class="time-block">
-                <span class="number" id="seconds">00</span>
-                <span class="label">Sekundy</span>
+
+            <!-- Dary -->
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-gift"></i></div>
+                <h2>Svatební dary</h2>
+                <p>Pokud nás chcete obdarovat, budeme nejvíce vděční za finanční příspěvek na naši společnou budoucnost. Fyzické dary prosím nekupujte.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Hlavní informace (čistý styl bez obdélníkových karet) -->
-    <main class="info-section">
+            <!-- Ubytování -->
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-bed"></i></div>
+                <h2>Ubytování</h2>
+                <p>Kapacita ubytování je dostatečná pro všechny hosty. Dejte nám prosím vědět, zda ubytování využijete.</p>
+                <p>Můžete k tomu využít formulář na stránce <a href="kontakt.html" class="link">Kontakt</a>.</p>
+            </div>
 
-        <!-- Datum -->
-        <div class="info-item">
-            <div class="info-icon"><i class="fa-regular fa-calendar-days"></i></div>
-            <h2>Datum a čas</h2>
-            <p class="highlight">4. září 2027</p>
-            <p>Obřad začíná ve 12:00 hod</p>
-        </div>
+            <!-- Dress Code -->
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h2>Dress Code</h2>
+                <p class="highlight">Formální / Pohodlné</p>
+                <p>Na obřad prosím zvolte formální oblečení.</p>
+                <p>Velká část programu se bude odehrávat venku v zámeckém parku, zvažte proto volbu pohodlné obuvi.</p>
+                <p>Netrváme na formálním oblečení po celý den, nezapomeňte si proto přibalit i něco pohodlného na večerní afterparty a pro případ chladnějšího počasí.</p>
+            </div>
 
-        <!-- Lokalita -->
-        <div class="info-item">
-            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-            <h2>Lokalita</h2>
-            <p class="highlight">Zámecký park – Prčice</p>
-            <p>Přesná adresa bude doplněna</p>
-        </div>
+        </main>
 
-        <!-- Dary -->
-        <div class="info-item">
-            <div class="info-icon"><i class="fa-solid fa-gift"></i></div>
-            <h2>Svatební dary</h2>
-            <p>Pokud nás chcete obdarovat, budeme nejvíce vděční za finanční příspěvek na naši společnou budoucnost. Fyzické dary prosím nekupujte.</p>
-        </div>
+    </div>
 
-        <!-- Ubytování -->
-        <div class="info-item">
-            <div class="info-icon"><i class="fa-solid fa-bed"></i></div>
-            <h2>Ubytování</h2>
-            <p>Kapacita ubytování je dostatečná pro všechny hosty. Dejte nám prosím vědět, zda ubytování využijete.</p>
-            <p>Můžete k tomu využít formulář na stránce <a href="kontakt.html" class="link">Kontakt</a>.</p>
-        </div>
-
-        <!-- Dress Code -->
-        <div class="info-item">
-            <div class="info-icon"><i class="fa-solid fa-user-tie"></i></div>
-            <h2>Dress Code</h2>
-            <p class="highlight">Formální / Pohodlné</p>
-            <p>Na obřad prosím zvolte formální oblečení.</p>
-            <p>Velká část programu se bude odehrávat venku v zámeckém parku, zvažte proto volbu pohodlné obuvi.</p>
-            <p>Netrváme na formálním oblečení po celý den, nezapomeňte si proto přibalit i něco pohodlného na večerní afterparty a pro případ chladnějšího počasí.</p>
-        </div>
-
-    </main>
-
-    <!-- Sekce Program Svatby (čistý styl) -->
+    <!-- Sekce Program Svatby (na bílém pozadí) -->
     <section class="program-section">
         <h2 class="program-title">PROGRAM SVATBY</h2>
         <div class="program-container">
