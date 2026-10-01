@@ -121,7 +121,7 @@
             letter-spacing: 3px;
         }
 
-        /* Spojený blok: Odpočet + Informace + Místo konání (jednotné pozadí #faf9f6) */
+        /* Spojený blok: Odpočet + Informace + Místo konání */
         .details-wrapper {
             background-color: #faf9f6;
             padding-bottom: 40px;
@@ -218,7 +218,37 @@
             color: #333;
         }
 
-        /* Sekce Místo Konání podle vzoru */
+        /* Styl pro svatební menu */
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px auto 0 auto;
+            max-width: 450px;
+        }
+
+        .menu-list li {
+            font-size: 15px;
+            color: #555;
+            font-weight: 300;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0dcd7;
+        }
+
+        .menu-list li:last-child {
+            border-bottom: none;
+        }
+
+        .menu-course {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #857263;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Sekce Místo Konání */
         .venue-section {
             max-width: 650px;
             margin: 20px auto 40px auto;
@@ -261,13 +291,6 @@
             margin-bottom: 4px;
         }
 
-        .venue-note {
-            font-size: 14px;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 35px;
-        }
-
         .btn-navigate {
             display: inline-block;
             background-color: #857263;
@@ -304,7 +327,7 @@
             border: 0;
         }
 
-        /* Sekce Program Svatby (na bílém pozadí #ffffff) */
+        /* Sekce Program Svatby */
         .program-section {
             background-color: #ffffff;
             padding: 80px 20px;
@@ -417,6 +440,70 @@
             line-height: 1.6;
         }
 
+        /* Sekce Galerie Zámku */
+        .castle-gallery-section {
+            background-color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #efece8;
+        }
+
+        .castle-gallery-title {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .castle-gallery-subtitle {
+            font-size: 15px;
+            color: #666;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 240px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: #ffffff;
+            padding: 20px 15px 12px 15px;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: center;
+        }
+
         /* Patička */
         footer {
             text-align: center;
@@ -461,7 +548,8 @@
             }
 
             .venue-title,
-            .venue-fun-title {
+            .venue-fun-title,
+            .castle-gallery-title {
                 font-size: 28px;
             }
 
@@ -549,6 +637,28 @@
                 <p>Obřad začíná ve 12:00 hod</p>
             </div>
 
+            <!-- Svatební Menu -->
+            <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-utensils"></i></div>
+                <h2>Svatební menu</h2>
+                <p>Slavnostní oběd se podává ve 14:30. Těšit se můžete na tradiční svatební menu:</p>
+                <ul class="menu-list">
+                    <li>
+                        <span class="menu-course">Předkrm</span>
+                        Jemná paštika z kachních jater s brusinkami a pečivem
+                    </li>
+                    <li>
+                        <span class="menu-course">Polévka</span>
+                        Tradiční hovězí vývar s játrovými knedlíčky a nudlemi
+                    </li>
+                    <li>
+                        <span class="menu-course">Hlavní chod</span>
+                        Svíčková na smetaně s houskovým knedlíkem a brusinkovým terčem
+                    </li>
+                </ul>
+                <p style="margin-top: 15px; font-size: 13px; color: #777;">* Pro vegetariány nebo hosty s potravinovými alergiemi rádi zajistíme alternativní menu. Dejte nám vědět předem.</p>
+            </div>
+
             <!-- Dary -->
             <div class="info-item">
                 <div class="info-icon"><i class="fa-solid fa-gift"></i></div>
@@ -576,7 +686,7 @@
 
         </main>
 
-        <!-- Místo konání (podle vzoru) -->
+        <!-- Místo konání -->
         <section class="venue-section">
             <h2 class="venue-title">MÍSTO<br>KONÁNÍ</h2>
             
@@ -597,7 +707,7 @@
 
     </div>
 
-    <!-- Sekce Program Svatby (na bílém pozadí) -->
+    <!-- Sekce Program Svatby -->
     <section class="program-section">
         <h2 class="program-title">PROGRAM SVATBY</h2>
         <div class="program-container">
@@ -665,6 +775,33 @@
                 <div class="fun-icon"><i class="fa-solid fa-tree"></i></div>
                 <h3>Zámecký park</h3>
                 <p>Rozlehlý park zve k příjemným procházkám, odpočinku v trávě i společnému focení.</p>
+            </div>
+
+            <div class="fun-card">
+                <div class="fun-icon"><i class="fa-solid fa-water"></i></div>
+                <h3>Zámecký rybník</h3>
+                <p>Klidné prostředí kolem zámeckého rybníka je ideální pro odpočinek u vody a relaxaci během odpoledne.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekce Galerie Zámku -->
+    <section class="castle-gallery-section">
+        <h2 class="castle-gallery-title">NÁHLÉDNĚTE NA ZÁMEK</h2>
+        <p class="castle-gallery-subtitle">Prostředí zámku Prčice, kde společně strávíme náš svatební den.</p>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80" alt="Zámek Prčice">
+                <div class="gallery-caption">Budova zámku</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&w=800&q=80" alt="Zámecký park">
+                <div class="gallery-caption">Zámecký park</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Zámecký rybník">
+                <div class="gallery-caption">Odpočinek u rybníka</div>
             </div>
         </div>
     </section>
