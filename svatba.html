@@ -350,6 +350,73 @@
             line-height: 1.6;
         }
 
+        /* Sekce Zábava na zámku */
+        .venue-fun-section {
+            background-color: #faf9f6;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid #efece8;
+        }
+
+        .venue-fun-title {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .venue-fun-subtitle {
+            font-size: 15px;
+            color: #666;
+            font-weight: 300;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
+            line-height: 1.8;
+        }
+
+        .fun-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fun-card {
+            background-color: #ffffff;
+            padding: 35px 25px;
+            border-radius: 8px;
+            border: 1px solid #e8e4df;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fun-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .fun-icon {
+            font-size: 2.2rem;
+            color: #857263;
+            margin-bottom: 20px;
+        }
+
+        .fun-card h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .fun-card p {
+            font-size: 14px;
+            color: #666;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
         /* Patička */
         footer {
             text-align: center;
@@ -393,8 +460,9 @@
                 font-size: 30px;
             }
 
-            .venue-title {
-                font-size: 30px;
+            .venue-title,
+            .venue-fun-title {
+                font-size: 28px;
             }
 
             .program-title {
@@ -564,6 +632,40 @@
                 <div class="program-text">První tancování a večerní zábava</div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Sekce Zábava a zázemí na zámku -->
+    <section class="venue-fun-section">
+        <h2 class="venue-fun-title">ZÁBAVA A ZÁZEMÍ ZÁMKU</h2>
+        <p class="venue-fun-subtitle">
+            Chceme, abyste si náš den užili naplno a bez spěchu. Mimo hlavního programu bude po celý den i večer k dispozici zámecké zázemí s možností odreagování a zábavy.
+        </p>
+
+        <div class="fun-grid">
+            <div class="fun-card">
+                <div class="fun-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                <h3>Kulečník</h3>
+                <p>Zámecký herní koutek nabízí klasický kulečník pro chvíle pohody a přátelských turnajů.</p>
+            </div>
+
+            <div class="fun-card">
+                <div class="fun-icon"><i class="fa-solid fa-futbol"></i></div>
+                <h3>Stolní fotbálek</h3>
+                <p>Pro akčnější povahy a rychlé zápasy bude připraven stolní fotbálek.</p>
+            </div>
+
+            <div class="fun-card">
+                <div class="fun-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Šipky</h3>
+                <p>Zkraťte si volné chvíle mezi programem nebo zkuste štěstí v terči při večerní zábavě.</p>
+            </div>
+
+            <div class="fun-card">
+                <div class="fun-icon"><i class="fa-solid fa-tree"></i></div>
+                <h3>Zámecký park</h3>
+                <p>Rozlehlý park zve k příjemným procházkám, odpočinku v trávě i společnému focení.</p>
+            </div>
         </div>
     </section>
 
