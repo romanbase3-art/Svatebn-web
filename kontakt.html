@@ -125,7 +125,7 @@
             letter-spacing: 3px;
         }
 
-        /* Sekce Formuláře */
+        /* Sekce Formuláře a Kontaktů */
         .rsvp-container {
             max-width: 680px;
             margin: -50px auto 80px auto;
@@ -242,6 +242,59 @@
             transform: translateY(-2px);
         }
 
+        /* Sekce Kontaktních údajů */
+        .contact-info-section {
+            margin-top: 45px;
+            padding-top: 35px;
+            border-top: 1px solid #efece8;
+            text-align: center;
+        }
+
+        .contact-info-section h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-card {
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            background-color: #faf9f6;
+            border-radius: 6px;
+            border: 1px solid #efece8;
+        }
+
+        .contact-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #857263;
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            font-size: 13px;
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .contact-card a {
+            color: #4a4a4a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #857263;
+        }
+
         /* Patička */
         footer {
             text-align: center;
@@ -253,7 +306,7 @@
         }
 
         /* Responsivita pro mobilní zařízení */
-         @media (max-width: 768px) {
+        @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 padding: 20px 15px;
@@ -291,6 +344,10 @@
             .rsvp-header h2 {
                 font-size: 24px;
             }
+
+            .contact-grid {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -319,7 +376,7 @@
         </div>
     </section>
 
-    <!-- Karta s Formulářem -->
+    <!-- Karta s Formulářem a Kontakty -->
     <main class="rsvp-container">
         <div class="rsvp-card">
             
@@ -394,6 +451,19 @@
 
                 <button type="submit" class="btn-submit">Odeslat odpověď</button>
             </form>
+
+            <!-- Kontaktní údaje -->
+            <div class="contact-info-section">
+                <h3>Máte dotaz? Napište nebo zavolejte</h3>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h4>Klára a Roman</h4>
+                        <p><i class="fa-solid fa-phone"></i> <a href="tel:+420123456789">+420 123 456 789</a></p>
+                        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:klara.roman@email.cz">klara.roman@email.cz</a></p>
+                    </div>
+                   
+                </div>
+            </div>
 
         </div>
     </main>
