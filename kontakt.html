@@ -242,6 +242,34 @@
             transform: translateY(-2px);
         }
 
+        /* Oznámení o již odeslaném formuláři */
+        .submitted-box {
+            display: none;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #faf9f6;
+            border: 1px solid #efece8;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .submitted-box i {
+            font-size: 40px;
+            color: #857263;
+            margin-bottom: 15px;
+        }
+
+        .submitted-box h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .submitted-box p {
+            font-size: 14px;
+            color: #666;
+        }
+
         /* Sekce Kontaktních údajů */
         .contact-info-section {
             margin-top: 45px;
@@ -385,7 +413,15 @@
                 <p>Prosíme o vyplnění formuláře do <strong>30. dubna 2027</strong>, abychom mohli vše včas naplánovat.</p>
             </div>
 
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Zpráva po odeslání (zobrazí se pouze pokud již formulář z daného zařízením odešel) -->
+            <div id="alreadySubmitted" class="submitted-box">
+                <i class="fa-solid fa-circle-check"></i>
+                <h3>Děkujeme!</h3>
+                <p>Odpověď z tohoto zařízení byla již v pořádku odeslána. Těšíme se na vás!</p>
+            </div>
+
+            <!-- Formulář -->
+            <form id="rsvpForm" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Váš klíč z Web3Forms -->
                 <input type="hidden" name="access_key" value="fa5ad5e3-5837-48ff-b442-cba9a115130a">
                 
@@ -461,7 +497,6 @@
                         <p><i class="fa-solid fa-phone"></i> <a href="tel:+420123456789">+420 123 456 789</a></p>
                         <p><i class="fa-solid fa-envelope"></i> <a href="mailto:klara.roman@email.cz">klara.roman@email.cz</a></p>
                     </div>
-                   
                 </div>
             </div>
 
@@ -473,8 +508,9 @@
         <p>&copy; 2027 Klára & Roman</p>
     </footer>
 
-    <!-- Skript pro mobilní navigaci -->
+    <!-- Skripty -->
     <script>
+        // Mobilní navigace
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
 
@@ -487,6 +523,23 @@
                 mainNav.classList.remove('active');
             });
         });
+
+        // Kontrola a uložení jednoho odeslání na zařízení
+        const rsvpForm = document.getElementById('rsvpForm');
+        const alreadySubmittedMsg = document.getElementById('alreadySubmitted');
+
+        // Při načtení stránky prověříme, zda už bylo z tohoto zařízení odesláno
+        if (localStorage.getItem('svatba_rsvp_submitted') === 'true') {
+            if (rsvpForm) rsvpForm.style.display = 'none';
+            if (alreadySubmittedMsg) alreadySubmittedMsg.style.display = 'block';
+        }
+
+        // Po odeslání ukládáme stav do localStorage
+        if (rsvpForm) {
+            rsvpForm.addEventListener('submit', () => {
+                localStorage.setItem('svatba_rsvp_submitted', 'true');
+            });
+        }
     </script>
 </body>
 </html>
